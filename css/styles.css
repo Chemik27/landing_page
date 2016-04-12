@@ -1,0 +1,15 @@
+      body {
+            padding: 30px 20px 0 20px;
+        }
+        .demo-title span {
+            color: #29A1D3;
+        }
+        .demo-title h1 {
+            font-weight: bold;
+        }
+        .panel-body {
+            min-height: 502px;
+        }
+        #page-footer {
+            padding: 30px;
+        }
