@@ -21,12 +21,15 @@
 </head>
 
 <body>
+
     <!-- Container -->
     <div id="form-container" class="container">
         <!-- Logo & title =========================================================== -->
         <div class="text-center demo-title bounceInDown animated">
+        <img src="logo-ubicacion.png" witdh="20%" height="20%" />
             <h1>Duty<span>Map</span></h1>
-            <p>Servicios</p>
+            <p>Servicios</p> 
+
         </div>
         <!-- //Logo & title =========================================================== -->
         <br>
@@ -37,16 +40,53 @@
                     <div class="panel-heading">
                         <h3 class="panel-title text-center">ENCUESTA</h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body cold-md-1">
                         <form class="bootstrap-validator-form" novalidate="novalidate" id="defaultForm" method="post" action="">
                             <div id="name-form-group" class="form-group has-feedback">
-                                <label class="fadeIn animated">Nombre</label>
-                                <input data-bv-field="username" class="form-control fadeInLeftBig animated" name="username" placeholder="Nombre" type="text"><i data-bv-field="username" class="form-control-feedback" style="display: none;"></i>
-                            <small class="help-block" data-bv-validator="notEmpty" style="display: none;">The username is required and can't be empty</small><small class="help-block" data-bv-validator="stringLength" style="display: none;">The username must be more than 6 and less than 30 characters long</small><small class="help-block" data-bv-validator="regexp" style="display: none;">The username can only consist of alphabetical, number, dot and underscore</small></div>
+                                <label class="fadeIn animated cold-md-6">Nombre</label>
+                                <input data-bv-field="username" class="form-control fadeInLeftBig animated cold-md-6" name="username" placeholder="Nombre" type="text"><i data-bv-field="username" class="form-control-feedback" style="display: none;"></i>
+                            <small class="help-block col-md-6" data-bv-validator="notEmpty" style="display: none;">El nombre es requerido</small>
+                            <small class="help-block col-md-6" data-bv-validator="regexp" style="display: none;">The username can only consist of alphabetical, number, dot and underscore</small>
+                            </div>
                             <div id="password-form-group" class="form-group has-feedback">
-                                <label class="fadeIn animated">Password</label>
-                                <input data-bv-field="password" class="form-control fadeInLeftBig animated" name="password" placeholder="Password" type="password"><i data-bv-field="password" class="form-control-feedback" style="display: none;"></i>
-                            <small class="help-block" data-bv-validator="notEmpty" style="display: none;">The password is required and can't be empty</small></div>
+                                <label class="fadeIn animated">Apellido</label>
+                                <input data-bv-field="password" class="form-control fadeInLeftBig animated" name="password" placeholder="Apellido" type="password"><i data-bv-field="password" class="form-control-feedback" style="display: none;"></i>
+                            <small class="help-block" data-bv-validator="notEmpty" style="display: none;">The password is required and can't be empty</small>
+                            </div>
+                            <div id="password-form-group" class="form-group has-feedback">
+                                <label class="fadeIn animated">Telefono</label>
+                                <input data-bv-field="password" class="form-control fadeInLeftBig animated" name="password" placeholder="Telefono" type="password"><i data-bv-field="password" class="form-control-feedback" style="display: none;"></i>
+                            <small class="help-block" data-bv-validator="notEmpty" style="display: none;">The password is required and can't be empty</small>
+                            </div>
+                            <div id="password-form-group" class="form-group has-feedback">
+                                <label class="fadeIn animated">Correo Electronico</label>
+                                <input data-bv-field="password" class="form-control fadeInLeftBig animated" name="password" placeholder="Correo Electonico" type="password"><i data-bv-field="password" class="form-control-feedback" style="display: none;"></i>
+                            <small class="help-block" data-bv-validator="notEmpty" style="display: none;">The password is required and can't be empty</small>
+                            </div>
+                            <div id="password-form-group" class="form-group has-feedback">
+                                <label class="fadeIn animated">Servicios</label>
+                                <select class=" form-control fadeInLeftBig animated">
+                                    <option>-</option>
+                                    <option disabled="true" style="background-color: #0B243B;">HOGAR</option>
+                                    <option>Gasista</option>
+                                    <option>Electricista</option>
+                                    <option>Instalacion/Reparacion Aire Acondicionado</option>
+                                    <option>Techista</option>
+                                    <option>Construccion</option>
+                                    <option disabled="true" style="background-color: #0B243B;">EDUCACION</option>
+                                    <option>Apoyo Escolar</option>
+                                    <option>Apoyo Universitario</option>
+                                    <option disabled="true" style="background-color: #0B243B;">SALUD</option>
+                                    <option>Kinesiologos</option>
+                                    <option>Dermatologa</option>
+                                    <option disabled="true" style="background-color: #0B243B;">BELLEZA</option>
+                                    <option>Revendora Cosmeticos</option>
+                                    <option>Tratamientos</option>
+                                    <option disabled="true" style="background-color: #0B243B;">OTRO</option>
+                                    <option id="otro">OTRO</option>
+                                </select>
+                            <small class="help-block" data-bv-validator="notEmpty" style="display: none;">The password is required and can't be empty</small>
+                            </div>
                             <div id="keep-logged-form-group" class="form-group has-feedback fadeIn animated">
                                 <div class="checkbox">
                                     <input data-bv-field="acceptTerms" name="acceptTerms" type="checkbox"><i data-bv-field="acceptTerms" class="form-control-feedback" style="display: none; top: 0px;"></i>Keep me logged in
@@ -79,6 +119,107 @@
         </p>
     </footer>
     <!-- //Page Footer =========================================================== -->
+<script>
+        $(document).ready(function () {
+            //Put animation end trigger on global variable to be used bellow on each animation end callback 
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            //Get actual browser used to disable animation if is Internet Explorer
+            var ua = window.navigator.userAgent
+            var msie = ua.indexOf ( "MSIE " )
+            // If Internet Explorer, disable animation
+            if(msie > 0){
+                $(".hidden").removeClass('hidden');
+            }
+            else
+            {
+            //Animation Script
+            $('.demo-title').one(animationEnd,
+                function () {
+                    $(".panel").removeClass('hidden');
+                    $(".panel").addClass('flipInX animated').one(animationEnd,
+                        function () {
+                            $("#name-form-group").removeClass('hidden');
+                            $("#name-form-group label").addClass('fadeIn animated')
+                            $("#name-form-group input").addClass('fadeInLeftBig animated').one(animationEnd,
+                                function () {
+                                    $("#password-form-group").removeClass('hidden');
+                                    $("#password-form-group label").addClass('fadeIn animated')
+                                    $("#password-form-group input").addClass('fadeInLeftBig animated').one(animationEnd,
+                                        function () {
+                                            $("#keep-logged-form-group").removeClass('hidden');
+                                            $("#keep-logged-form-group").addClass('fadeIn animated').one(animationEnd,
+                                                function () {
+                                                    $("#submit-form-group").removeClass('hidden');
+                                                    $("#submit-form-group").addClass('bounceIn animated').one(animationEnd,
+                                                        function () {
+                                                            $(".line").removeClass('hidden');
+                                                            $(".line").addClass('fadeInLeftBig animated');
 
+
+                                                            $(".btn-facebook").removeClass('hidden');
+                                                            $(".btn-facebook").addClass('fadeInLeft animated');
+
+                                                            $(".btn-twitter").removeClass('hidden');
+                                                            $(".btn-twitter").addClass('fadeInRight animated');
+
+                                                            $(".btn-google-plus").removeClass('hidden');
+                                                            $(".btn-google-plus").addClass('fadeInDown animated').one(animationEnd,
+                                                                function () {
+                                                                    $("#have-account-text").removeClass('hidden');
+                                                                    $("#have-account-text").addClass('fadeIn animated').one(animationEnd,
+                                                                        function () {
+                                                                            $("#btn-signup").removeClass('hidden');
+                                                                            $("#btn-signup").addClass('bounce animated');
+                                                                        });
+                                                                });
+
+                                                        });
+                                                });
+
+                                        });
+                                });
+                        });
+                    $("#page-footer").removeClass('hidden');
+                    $("#page-footer").addClass('fadeInDown animated');
+                }
+            );
+            }
+            //Form validation
+            $('#defaultForm').bootstrapValidator({
+                message: 'This value is not valid',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    nombre: {
+                        message: 'El nombre es invalido',
+                        validators: {
+                            notEmpty: {
+                                message: 'El nombre es requerido'
+                            },
+                            regexp: {
+                                regexp: /^[a-zA-Z]*$/,
+                                message: 'Solo se admiten letras'
+                            }
+                        }
+                    },
+                    apellido: {
+                        message: 'El apellido es invalido',
+                        validators: {
+                            notEmpty: {
+                                message: 'El nombre es requerido'
+                            },
+                            regexp: {
+                                regexp: /^[a-zA-Z]*$/,
+                                message: 'Solo se admiten letras'
+                            }
+                        }
+                    }
+                }
+            });
+        }); //end document ready
+    </script>
 
 </body></html>
