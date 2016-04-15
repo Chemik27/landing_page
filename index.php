@@ -16,7 +16,7 @@
     <link href="css/xtraform.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- Main Scripts-->
-    <script src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/jquery/jquery-2.2.3.min.js"></script>
     <script src="plugins/bootstrapValidator/bootstrapValidator.min.js"></script>
 </head>
 
@@ -41,68 +41,79 @@
                         <h3 class="panel-title text-center">ENCUESTA</h3>
                     </div>
                     <div class="panel-body cold-md-1">
-                        <form class="bootstrap-validator-form" novalidate="novalidate" id="defaultForm" method="post" action="">
-                            <div id="name-form-group" class="form-group has-feedback">
-                                <label class="fadeIn animated cold-md-6">Nombre</label>
-                                <input data-bv-field="username" class="form-control fadeInLeftBig animated cold-md-6" name="username" placeholder="Nombre" type="text"><i data-bv-field="username" class="form-control-feedback" style="display: none;"></i>
-                            <small class="help-block col-md-6" data-bv-validator="notEmpty" style="display: none;">El nombre es requerido</small>
-                            <small class="help-block col-md-6" data-bv-validator="regexp" style="display: none;">The username can only consist of alphabetical, number, dot and underscore</small>
-                            </div>
-                            <div id="password-form-group" class="form-group has-feedback">
-                                <label class="fadeIn animated">Apellido</label>
-                                <input data-bv-field="password" class="form-control fadeInLeftBig animated" name="password" placeholder="Apellido" type="password"><i data-bv-field="password" class="form-control-feedback" style="display: none;"></i>
-                            <small class="help-block" data-bv-validator="notEmpty" style="display: none;">The password is required and can't be empty</small>
-                            </div>
-                            <div id="password-form-group" class="form-group has-feedback">
-                                <label class="fadeIn animated">Telefono</label>
-                                <input data-bv-field="password" class="form-control fadeInLeftBig animated" name="password" placeholder="Telefono" type="password"><i data-bv-field="password" class="form-control-feedback" style="display: none;"></i>
-                            <small class="help-block" data-bv-validator="notEmpty" style="display: none;">The password is required and can't be empty</small>
-                            </div>
-                            <div id="password-form-group" class="form-group has-feedback">
-                                <label class="fadeIn animated">Correo Electronico</label>
-                                <input data-bv-field="password" class="form-control fadeInLeftBig animated" name="password" placeholder="Correo Electonico" type="password"><i data-bv-field="password" class="form-control-feedback" style="display: none;"></i>
-                            <small class="help-block" data-bv-validator="notEmpty" style="display: none;">The password is required and can't be empty</small>
-                            </div>
-                            <div id="password-form-group" class="form-group has-feedback">
-                                <label class="fadeIn animated">Servicios</label>
-                                <select class=" form-control fadeInLeftBig animated">
-                                    <option>-</option>
-                                    <option disabled="true" style="background-color: #0B243B;">HOGAR</option>
-                                    <option>Gasista</option>
-                                    <option>Electricista</option>
-                                    <option>Instalacion/Reparacion Aire Acondicionado</option>
-                                    <option>Techista</option>
-                                    <option>Construccion</option>
-                                    <option disabled="true" style="background-color: #0B243B;">EDUCACION</option>
-                                    <option>Apoyo Escolar</option>
-                                    <option>Apoyo Universitario</option>
-                                    <option disabled="true" style="background-color: #0B243B;">SALUD</option>
-                                    <option>Kinesiologos</option>
-                                    <option>Dermatologa</option>
-                                    <option disabled="true" style="background-color: #0B243B;">BELLEZA</option>
-                                    <option>Revendora Cosmeticos</option>
-                                    <option>Tratamientos</option>
-                                    <option disabled="true" style="background-color: #0B243B;">OTRO</option>
-                                    <option id="otro">OTRO</option>
-                                </select>
-                            <small class="help-block" data-bv-validator="notEmpty" style="display: none;">The password is required and can't be empty</small>
-                            </div>
-                            <div id="keep-logged-form-group" class="form-group has-feedback fadeIn animated">
-                                <div class="checkbox">
-                                    <input data-bv-field="acceptTerms" name="acceptTerms" type="checkbox"><i data-bv-field="acceptTerms" class="form-control-feedback" style="display: none; top: 0px;"></i>Keep me logged in
+                        <form class="bootstrap-validator-form" novalidate="novalidate" id="defaultForm" method="post" action="#">
+                            <div class="row">
+                                <div class="col-sm-6">DutyMap es una aplicacion ....</div>
+                                <div class="col-sm-6">
+                                    <div id="name-form-group" class="form-group has-feedback">
+                                        <label class="fadeIn animated cold-md-6">Nombre</label>
+                                        <input data-bv-field="nombre" class="form-control fadeInLeftBig animated cold-md-6" name="nombre" id="nombre" type="text"><i data-bv-field="username" class="form-control-feedback" style="display: none;"></i>
+                                    </div>
+                                    <div id="name-form-group" class="form-group has-feedback">
+                                        <label class="fadeIn animated">Apellido</label>
+                                        <input data-bv-field="apellido" class="form-control fadeInLeftBig animated" name="apellido" id="apellido"  type="text"><i data-bv-field="apellido" class="form-control-feedback" style="display: none;"></i>
+                                    </div>
+                                    <div id="name-form-group" class="form-group has-feedback">
+                                        <label class="fadeIn animated cold-md-6">Nombre de usuario</label>
+                                        <input data-bv-field="nombreUsuario" class="form-control fadeInLeftBig animated cold-md-6" name="nombreUsuario" id="nombreUsuario"  type="text"><i data-bv-field="nombreUsuario" class="form-control-feedback" style="display: none;"></i>
+                                    </div>
+                                    <div id="name-form-group" class="form-group has-feedback">
+                                        <label class="fadeIn animated">Password</label>
+                                        <input data-bv-field="password" class="form-control fadeInLeftBig animated" name="password" id="password"  type="password"><i data-bv-field="password" class="form-control-feedback" style="display: none;"></i>
+                                    </div>
+                                    <div id="name-form-group" class="form-group has-feedback">
+                                        <label class="fadeIn animated">Repetir password</label>
+                                        <input data-bv-field="passwordRepeat" class="form-control fadeInLeftBig animated" name="passwordRepeat" id="passwordRepeat" type="password"><i data-bv-field="passwordRepeat" class="form-control-feedback" style="display: none;"></i>
+                                    </div>
+                                    <div id="name-form-group" class="form-group has-feedback">
+                                        <label class="fadeIn animated">Telefono</label>
+                                        <input data-bv-field="telefono" class="form-control fadeInLeftBig animated" name="telefono" id="telefono" type="text"><i data-bv-field="telefono" class="form-control-feedback" style="display: none;"></i>
+                                    </div>
+                                    <div id="name-form-group" class="form-group has-feedback">
+                                        <label class="fadeIn animated">Correo Electronico</label>
+                                        <input data-bv-field="email" class="form-control fadeInLeftBig animated" name="email" id="email" type="text"><i data-bv-field="email" class="form-control-feedback" style="display: none;"></i>
+                                    </div>
+                                    <div id="name-form-group" class="form-group has-feedback">
+                                        <label class="fadeIn animated">Servicios</label>
+                                        <select class=" form-control fadeInLeftBig animated" id="servicios" name="servicios">
+                                            <option value="">-</option>
+                                            <option disabled="true" style="background-color: #0B243B;">HOGAR</option>
+                                            <option>Gasista</option>
+                                            <option>Electricista</option>
+                                            <option>Instalacion/Reparacion Aire Acondicionado</option>
+                                            <option>Techista</option>
+                                            <option>Construccion</option>
+                                            <option disabled="true" style="background-color: #0B243B;">EDUCACION</option>
+                                            <option>Apoyo Escolar</option>
+                                            <option>Apoyo Universitario</option>
+                                            <option disabled="true" style="background-color: #0B243B;">SALUD</option>
+                                            <option>Kinesiologos</option>
+                                            <option>Dermatologa</option>
+                                            <option disabled="true" style="background-color: #0B243B;">BELLEZA</option>
+                                            <option>Revendora Cosmeticos</option>
+                                            <option>Tratamientos</option>
+                                            <option disabled="true" style="background-color: #0B243B;">OTRO</option>
+                                            <option id="otro">OTRO</option>
+                                        </select>
+                                    </div>
+                                    <div id="keep-logged-form-group" class="form-group has-feedback fadeIn animated">
+                                        <div class="checkbox">
+                                            <input data-bv-field="acceptTerms" name="acceptTerms" type="checkbox"><i data-bv-field="acceptTerms" class="form-control-feedback" style="display: none; top: 0px;"></i>Keep me logged in
+                                        </div>
+                                    </div>
+                                    <div id="submit-form-group" class="form-group bounceIn animated">
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                    </div>
+                                 <!--   <div class="line line-dashed fadeInLeftBig animated"></div>
+                                    <a href="#" class="btn btn-facebook block m-b-10 fadeInLeft animated">
+                                        <i class="fa fa-facebook pull-left"></i>Sign in with Facebook
+                                    </a>
+                                    <a href="#" class="btn btn-twitter  block m-b-10 fadeInRight animated">
+                                        <i class="fa fa-twitter pull-left"></i>Sign in with Twitter
+                                    </a>
+        						-->
                                 </div>
                             </div>
-                            <div id="submit-form-group" class="form-group bounceIn animated">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>
-                         <!--   <div class="line line-dashed fadeInLeftBig animated"></div>
-                            <a href="#" class="btn btn-facebook block m-b-10 fadeInLeft animated">
-                                <i class="fa fa-facebook pull-left"></i>Sign in with Facebook
-                            </a>
-                            <a href="#" class="btn btn-twitter  block m-b-10 fadeInRight animated">
-                                <i class="fa fa-twitter pull-left"></i>Sign in with Twitter
-                            </a>
-						-->
                         </form>
                     </div>
                 </div>
@@ -185,13 +196,7 @@
             );
             }
             //Form validation
-            $('#defaultForm').bootstrapValidator({
-                message: 'This value is not valid',
-                feedbackIcons: {
-                    valid: 'glyphicon glyphicon-ok',
-                    invalid: 'glyphicon glyphicon-remove',
-                    validating: 'glyphicon glyphicon-refresh'
-                },
+            var validator = $('#defaultForm').bootstrapValidator({
                 fields: {
                     nombre: {
                         message: 'El nombre es invalido',
@@ -209,14 +214,73 @@
                         message: 'El apellido es invalido',
                         validators: {
                             notEmpty: {
-                                message: 'El nombre es requerido'
+                                message: 'El apellido es requerido'
                             },
                             regexp: {
                                 regexp: /^[a-zA-Z]*$/,
                                 message: 'Solo se admiten letras'
                             }
                         }
+                    },
+                    nombreUsuario: {
+                        message: 'El Nombre de usuario es invalido',
+                        validators: {
+                            notEmpty: {
+                                message: 'El Nombre de usuario es requerido'
+                            }
+                        }
+                    },
+                    password: {
+                        message: 'El password es invalido',
+                        validators: {
+                            notEmpty: {
+                                message: 'La password es requerido'
+                            }
+                        }
+                    },
+                    passwordRepeat: {
+                        message: 'El password es invalido',
+                        validators: {
+                            notEmpty: {
+                                message: 'Ingrese nuevamente la password'
+                            },
+                            identical: {
+                                field: 'password',
+                                message: 'La password no coincide con la ya ingresada'
+                            }  
+                        }
+                    },
+                    telefono: {
+                        message: 'El telefono es invalido',
+                        validators: {
+                            notEmpty: {
+                                message: 'El telefono es requerido'
+                            },
+                            regexp: {
+                                regexp: /^[15][0-9]{9}$/,
+                                message: 'Celular mal ingresado, debe comenzar con 15xxxxxxxx'
+                            }
+                        }
+                    },
+                    email: {
+                        message: 'El email es invalido',
+                        validators: {
+                            notEmpty: {
+                                message: 'El email es requerido'
+                            },
+                            emailAddress: {
+                                message: 'El email ingresado es incorrecto'
+                            }
+                        }
+                    },
+                    servicios: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Seleccione un servicio'
+                            }
+                        }
                     }
+
                 }
             });
         }); //end document ready
