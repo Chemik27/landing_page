@@ -26,10 +26,7 @@
     <div id="form-container" class="container">
         <!-- Logo & title =========================================================== -->
         <div class="text-center demo-title bounceInDown animated">
-        <img src="logo-ubicacion.png" witdh="20%" height="20%" />
-            <h1>Duty<span>Map</span></h1>
-            <p>Servicios</p> 
-
+        <img src="imagenes/Logo-DutyMap.png" witdh="40%" height="40%" />
         </div>
         <!-- //Logo & title =========================================================== -->
         <br>
@@ -124,10 +121,7 @@
     <!-- //Container -->
     <!-- Page Footer =========================================================== -->
     <footer id="page-footer" class="text-center fadeInDown animated">
-        <p>
-            Built with <a href="http://getbootstrap.com/">Bootstrap 3</a>
-            | Made by <a href="http://codecanyon.net/user/ay_dev">Aydev</a>
-        </p>
+       
     </footer>
     <!-- //Page Footer =========================================================== -->
 <script>
