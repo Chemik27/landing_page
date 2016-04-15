@@ -1,6 +1,7 @@
 <html lang="en"><head>
+    <link rel="shortcut icon" type="image/png" href="imagenes/iconoDuty.png"/>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>XtraForm - Bootstrap 3 Xtra Form</title>
+    <title>Duty Map | Home</title>
     <link href="http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="XtraForm Bootstrap 3 Xtra Form">
@@ -51,18 +52,6 @@
                                         <input data-bv-field="apellido" class="form-control fadeInLeftBig animated" name="apellido" id="apellido"  type="text"><i data-bv-field="apellido" class="form-control-feedback" style="display: none;"></i>
                                     </div>
                                     <div id="name-form-group" class="form-group has-feedback">
-                                        <label class="fadeIn animated cold-md-6">Nombre de usuario</label>
-                                        <input data-bv-field="nombreUsuario" class="form-control fadeInLeftBig animated cold-md-6" name="nombreUsuario" id="nombreUsuario"  type="text"><i data-bv-field="nombreUsuario" class="form-control-feedback" style="display: none;"></i>
-                                    </div>
-                                    <div id="name-form-group" class="form-group has-feedback">
-                                        <label class="fadeIn animated">Password</label>
-                                        <input data-bv-field="password" class="form-control fadeInLeftBig animated" name="password" id="password"  type="password"><i data-bv-field="password" class="form-control-feedback" style="display: none;"></i>
-                                    </div>
-                                    <div id="name-form-group" class="form-group has-feedback">
-                                        <label class="fadeIn animated">Repetir password</label>
-                                        <input data-bv-field="passwordRepeat" class="form-control fadeInLeftBig animated" name="passwordRepeat" id="passwordRepeat" type="password"><i data-bv-field="passwordRepeat" class="form-control-feedback" style="display: none;"></i>
-                                    </div>
-                                    <div id="name-form-group" class="form-group has-feedback">
                                         <label class="fadeIn animated">Telefono</label>
                                         <input data-bv-field="telefono" class="form-control fadeInLeftBig animated" name="telefono" id="telefono" type="text"><i data-bv-field="telefono" class="form-control-feedback" style="display: none;"></i>
                                     </div>
@@ -92,11 +81,6 @@
                                             <option disabled="true" style="background-color: #0B243B;">OTRO</option>
                                             <option id="otro">OTRO</option>
                                         </select>
-                                    </div>
-                                    <div id="keep-logged-form-group" class="form-group has-feedback fadeIn animated">
-                                        <div class="checkbox">
-                                            <input data-bv-field="acceptTerms" name="acceptTerms" type="checkbox"><i data-bv-field="acceptTerms" class="form-control-feedback" style="display: none; top: 0px;"></i>Keep me logged in
-                                        </div>
                                     </div>
                                     <div id="submit-form-group" class="form-group bounceIn animated">
                                         <button type="submit" class="btn btn-primary">Enviar</button>
@@ -214,34 +198,6 @@
                                 regexp: /^[a-zA-Z]*$/,
                                 message: 'Solo se admiten letras'
                             }
-                        }
-                    },
-                    nombreUsuario: {
-                        message: 'El Nombre de usuario es invalido',
-                        validators: {
-                            notEmpty: {
-                                message: 'El Nombre de usuario es requerido'
-                            }
-                        }
-                    },
-                    password: {
-                        message: 'El password es invalido',
-                        validators: {
-                            notEmpty: {
-                                message: 'La password es requerido'
-                            }
-                        }
-                    },
-                    passwordRepeat: {
-                        message: 'El password es invalido',
-                        validators: {
-                            notEmpty: {
-                                message: 'Ingrese nuevamente la password'
-                            },
-                            identical: {
-                                field: 'password',
-                                message: 'La password no coincide con la ya ingresada'
-                            }  
                         }
                     },
                     telefono: {
