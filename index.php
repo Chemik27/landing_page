@@ -1,3 +1,4 @@
+
 <html lang="en"><head>
     <link rel="shortcut icon" type="image/png" href="imagenes/iconoDuty.png"/>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -21,8 +22,7 @@
     <script src="plugins/bootstrapValidator/bootstrapValidator.min.js"></script>
 </head>
 
-<body>
-
+<body>   
     <!-- Container -->
     <div id="form-container" class="container">
         <!-- Logo & title =========================================================== -->
@@ -39,7 +39,7 @@
                         <h3 class="panel-title text-center">ENCUESTA</h3>
                     </div>
                     <div class="panel-body cold-md-1">
-                        <form class="bootstrap-validator-form" novalidate="novalidate" id="defaultForm" method="post" action="#">
+                        <form class="bootstrap-validator-form" novalidate="novalidate" id="defaultForm" method="post" action="controller.php">
                             <div class="row">
                                 <div class="col-sm-6">DutyMap es una aplicacion ....</div>
                                 <div class="col-sm-6">
@@ -47,21 +47,21 @@
                                         <label class="fadeIn animated cold-md-6">Nombre</label>
                                         <input data-bv-field="nombre" class="form-control fadeInLeftBig animated cold-md-6" name="nombre" id="nombre" type="text"><i data-bv-field="username" class="form-control-feedback" style="display: none;"></i>
                                     </div>
-                                    <div id="name-form-group" class="form-group has-feedback">
+                                    <div id="apellido-form-group" class="form-group has-feedback">
                                         <label class="fadeIn animated">Apellido</label>
                                         <input data-bv-field="apellido" class="form-control fadeInLeftBig animated" name="apellido" id="apellido"  type="text"><i data-bv-field="apellido" class="form-control-feedback" style="display: none;"></i>
                                     </div>
-                                    <div id="name-form-group" class="form-group has-feedback">
+                                    <div id="telefono-form-group" class="form-group has-feedback">
                                         <label class="fadeIn animated">Telefono</label>
                                         <input data-bv-field="telefono" class="form-control fadeInLeftBig animated" name="telefono" id="telefono" type="text"><i data-bv-field="telefono" class="form-control-feedback" style="display: none;"></i>
                                     </div>
-                                    <div id="name-form-group" class="form-group has-feedback">
+                                    <div id="correoElectronico-form-group" class="form-group has-feedback">
                                         <label class="fadeIn animated">Correo Electronico</label>
-                                        <input data-bv-field="email" class="form-control fadeInLeftBig animated" name="email" id="email" type="text"><i data-bv-field="email" class="form-control-feedback" style="display: none;"></i>
+                                        <input data-bv-field="correoElectronico" class="form-control fadeInLeftBig animated" name="correoElectronico" id="correoElectronico" type="text"><i data-bv-field="correoElectronico" class="form-control-feedback" style="display: none;"></i>
                                     </div>
-                                    <div id="name-form-group" class="form-group has-feedback">
+                                    <div id="servicios-form-group" class="form-group has-feedback">
                                         <label class="fadeIn animated">Servicios</label>
-                                        <select class=" form-control fadeInLeftBig animated" id="servicios" name="servicios">
+                                        <select class=" form-control fadeInLeftBig animated" id="servicios" name="servicios" onchange="servicioOnChange();">
                                             <option value="">-</option>
                                             <option disabled="true" style="background-color: #0B243B;">HOGAR</option>
                                             <option>Gasista</option>
@@ -81,6 +81,10 @@
                                             <option disabled="true" style="background-color: #0B243B;">OTRO</option>
                                             <option id="otro">OTRO</option>
                                         </select>
+                                    </div>
+                                    <div id="servicio-form-group" class="form-group has-feedback" style="display: none;">
+                                        <label class="fadeIn animated">Servicio</label>
+                                        <input data-bv-field="servicio" class="form-control fadeInLeftBig animated" name="servicio" id="servicio" type="text"><i data-bv-field="servicio" class="form-control-feedback" style="display: none;"></i>
                                     </div>
                                     <div id="submit-form-group" class="form-group bounceIn animated">
                                         <button type="submit" class="btn btn-primary">Enviar</button>
@@ -110,6 +114,16 @@
     <!-- //Page Footer =========================================================== -->
 <script>
         $(document).ready(function () {
+            //Validacion al elegir OTRO como Servicio
+            servicioOnChange = function(){
+                var servicio = $('#servicios').val();
+
+                if(servicio == 'OTRO')
+                    $('#servicio-form-group').show();
+                else
+                    $('#servicio-form-group').hide();
+
+            }
             //Put animation end trigger on global variable to be used bellow on each animation end callback 
             var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
             //Get actual browser used to disable animation if is Internet Explorer
@@ -212,7 +226,7 @@
                             }
                         }
                     },
-                    email: {
+                    correoElectronico: {
                         message: 'El email es invalido',
                         validators: {
                             notEmpty: {
@@ -229,11 +243,20 @@
                                 message: 'Seleccione un servicio'
                             }
                         }
-                    }
+                    },
+                    servicio: {
+                    message: 'El servicio es invalido',
+                        validators: {
+                            notEmpty: {
+                                message: 'El servicio es requerido'
+                            }
+                        }
+                    }    
 
                 }
             });
         }); //end document ready
-    </script>
+    </script>+
+    -
 
 </body></html>
