@@ -84,7 +84,7 @@
                                     </div>
                                     <div id="servicio-form-group" class="form-group has-feedback" style="display: none;">
                                         <label class="fadeIn animated">Servicio</label>
-                                        <input data-bv-field="servicio" class="form-control fadeInLeftBig animated" name="servicio" id="servicio" type="text"><i data-bv-field="servicio" class="form-control-feedback" style="display: none;"></i>
+                                        <input data-bv-field="servicio" class="form-control fadeInLeftBig animated" name="servicio" id="servicio" type="text"><i data-bv-field="servicio"  class="form-control-feedback" style="display: none;"></i>
                                     </div>
                                     <div id="submit-form-group" class="form-group bounceIn animated">
                                         <button type="submit" class="btn btn-primary">Enviar</button>

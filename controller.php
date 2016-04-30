@@ -12,16 +12,21 @@
    $servicio=$_POST['servicio'];
 
    $result = mysqli_query($link, "SELECT  correoElectronico FROM usuario2 WHERE correoElectronico = '$correoElectronico'");
-   
+   $error;
+
    if($result->num_rows > 0){
-      echo "El email con el que se quiere registrar ya existe";
+      $error = '1';
    }else{
-      if($servicio=='OTRO')
+      if($servicio=='OTRO'){
+         $error = '2';
          mysqli_query($link, "INSERT INTO usuario2 VALUES (null,'$nombre','$apellido','$telefono','$correoElectronico','$servicio')");
-      else
+      }
+      else{
+         $error = '2';
          mysqli_query($link, "INSERT INTO usuario2 VALUES (null,'$nombre','$apellido','$telefono','$correoElectronico','$servicios')");
+      }
    }
    
    mysqli_close($link);
-
+   header("Location: messages.php?error=".$error);
    ?>
