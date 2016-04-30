@@ -27,7 +27,7 @@
     <div id="form-container" class="container">
         <!-- Logo & title =========================================================== -->
         <div class="text-center demo-title bounceInDown animated">
-        <img src="imagenes/Logo-DutyMap.png" witdh="40%" height="40%" />
+        <img src="imagenes/Logo-DutyMap-Original.png" witdh="30%" height="30%" />
         </div>
         <!-- //Logo & title =========================================================== -->
         <br>
