@@ -2,7 +2,7 @@
 <html lang="en"><head>
     <link rel="shortcut icon" type="image/png" href="imagenes/iconoDuty.png"/>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Duty Map | Home</title>
+    <title>Dutymap</title>
     <link href="http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="XtraForm Bootstrap 3 Xtra Form">
@@ -27,7 +27,7 @@
     <div id="form-container" class="container">
         <!-- Logo & title =========================================================== -->
         <div class="text-center demo-title bounceInDown animated">
-        <img src="imagenes/Logo-DutyMap-Original.png" witdh="20%" height="20%" />
+        <img src="imagenes/logo.png" witdh="20%" height="20%" />
         </div>
         <!-- //Logo & title =========================================================== -->
         <br>
@@ -41,8 +41,7 @@
                     <div class="panel-body cold-md-1">
                         <form class="bootstrap-validator-form" novalidate="novalidate" id="defaultForm" method="post" action="controller.php">
                             <div class="row">
-                                <div class="col-sm-6">DutyMap es una aplicacion ....</div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-8 col-sm-push-2">
                                     <div id="name-form-group" class="form-group has-feedback">
                                         <label class="fadeIn animated cold-md-6">Nombre</label>
                                         <input data-bv-field="nombre" class="form-control fadeInLeftBig animated cold-md-6" name="nombre" id="nombre" type="text"><i data-bv-field="username" class="form-control-feedback" style="display: none;"></i>
