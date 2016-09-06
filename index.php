@@ -1,6 +1,8 @@
+
 <html lang="en"><head>
+    <link rel="shortcut icon" type="image/png" href="imagenes/iconoDuty.png"/>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>XtraForm - Bootstrap 3 Xtra Form</title>
+    <title>Dutymap</title>
     <link href="http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="XtraForm Bootstrap 3 Xtra Form">
@@ -16,20 +18,16 @@
     <link href="css/xtraform.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- Main Scripts-->
-    <script src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/jquery/jquery-2.2.3.min.js"></script>
     <script src="plugins/bootstrapValidator/bootstrapValidator.min.js"></script>
 </head>
 
-<body>
-
+<body>   
     <!-- Container -->
     <div id="form-container" class="container">
         <!-- Logo & title =========================================================== -->
         <div class="text-center demo-title bounceInDown animated">
-        <img src="logo-ubicacion.png" witdh="20%" height="20%" />
-            <h1>Duty<span>Map</span></h1>
-            <p>Servicios</p> 
-
+        <img src="imagenes/logo.png" witdh="20%" height="20%" />
         </div>
         <!-- //Logo & title =========================================================== -->
         <br>
@@ -92,17 +90,6 @@
                                     <input data-bv-field="acceptTerms" name="acceptTerms" type="checkbox"><i data-bv-field="acceptTerms" class="form-control-feedback" style="display: none; top: 0px;"></i>Keep me logged in
                                 </div>
                             </div>
-                            <div id="submit-form-group" class="form-group bounceIn animated">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>
-                         <!--   <div class="line line-dashed fadeInLeftBig animated"></div>
-                            <a href="#" class="btn btn-facebook block m-b-10 fadeInLeft animated">
-                                <i class="fa fa-facebook pull-left"></i>Sign in with Facebook
-                            </a>
-                            <a href="#" class="btn btn-twitter  block m-b-10 fadeInRight animated">
-                                <i class="fa fa-twitter pull-left"></i>Sign in with Twitter
-                            </a>
-						-->
                         </form>
                     </div>
                 </div>
@@ -113,14 +100,21 @@
     <!-- //Container -->
     <!-- Page Footer =========================================================== -->
     <footer id="page-footer" class="text-center fadeInDown animated">
-        <p>
-            Built with <a href="http://getbootstrap.com/">Bootstrap 3</a>
-            | Made by <a href="http://codecanyon.net/user/ay_dev">Aydev</a>
-        </p>
+       
     </footer>
     <!-- //Page Footer =========================================================== -->
 <script>
         $(document).ready(function () {
+            //Validacion al elegir OTRO como Servicio
+            servicioOnChange = function(){
+                var servicio = $('#servicios').val();
+
+                if(servicio == 'OTRO')
+                    $('#servicio-form-group').show();
+                else
+                    $('#servicio-form-group').hide();
+
+            }
             //Put animation end trigger on global variable to be used bellow on each animation end callback 
             var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
             //Get actual browser used to disable animation if is Internet Explorer
@@ -185,13 +179,7 @@
             );
             }
             //Form validation
-            $('#defaultForm').bootstrapValidator({
-                message: 'This value is not valid',
-                feedbackIcons: {
-                    valid: 'glyphicon glyphicon-ok',
-                    invalid: 'glyphicon glyphicon-remove',
-                    validating: 'glyphicon glyphicon-refresh'
-                },
+            var validator = $('#defaultForm').bootstrapValidator({
                 fields: {
                     nombre: {
                         message: 'El nombre es invalido',
@@ -209,17 +197,57 @@
                         message: 'El apellido es invalido',
                         validators: {
                             notEmpty: {
-                                message: 'El nombre es requerido'
+                                message: 'El apellido es requerido'
                             },
                             regexp: {
                                 regexp: /^[a-zA-Z]*$/,
                                 message: 'Solo se admiten letras'
                             }
                         }
-                    }
+                    },
+                    telefono: {
+                        message: 'El telefono es invalido',
+                        validators: {
+                            notEmpty: {
+                                message: 'El telefono es requerido'
+                            },
+                            regexp: {
+                                regexp: /^[15][0-9]{9}$/,
+                                message: 'Celular mal ingresado, debe comenzar con 15xxxxxxxx'
+                            }
+                        }
+                    },
+                    correoElectronico: {
+                        message: 'El email es invalido',
+                        validators: {
+                            notEmpty: {
+                                message: 'El email es requerido'
+                            },
+                            emailAddress: {
+                                message: 'El email ingresado es incorrecto'
+                            }
+                        }
+                    },
+                    servicios: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Seleccione un servicio'
+                            }
+                        }
+                    },
+                    servicio: {
+                    message: 'El servicio es invalido',
+                        validators: {
+                            notEmpty: {
+                                message: 'El servicio es requerido'
+                            }
+                        }
+                    }    
+
                 }
             });
         }); //end document ready
-    </script>
+    </script>+
+    -
 
 </body></html>
