@@ -68,7 +68,7 @@
                                 <select class=" form-control fadeInLeftBig animated">
                                     <option>-</option>
                                     <option disabled="true" style="background-color: #0B243B;">HOGAR</option>
-                                    <option>Gasista</option>
+                                    <option>Plomero</option>
                                     <option>Electricista</option>
                                     <option>Instalacion/Reparacion Aire Acondicionado</option>
                                     <option>Techista</option>
